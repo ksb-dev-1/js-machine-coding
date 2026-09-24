@@ -48,6 +48,8 @@ function subarraySum(nums, k) {
 
 */
 
+// Optimized
+
 function subarraySum(nums, k) {
   const map = new Map();
   let count = 0;
