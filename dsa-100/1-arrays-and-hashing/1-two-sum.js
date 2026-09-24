@@ -1,6 +1,6 @@
 /*
 
-You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
+1. You are given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.
 
 Example 1:
 ----------
@@ -34,7 +34,7 @@ Only one valid answer exists.
 function twoSum(nums, target) {
   const map = new Map();
 
-  for (let i = 0; i < nums.length; i++){
+  for (let i = 0; i < nums.length; i++) {
     const remainder = target - nums[i];
 
     if (map.has(remainder)) {
@@ -50,7 +50,7 @@ function twoSum(nums, target) {
 // const nums = [3, 2, 4]
 // const target = 6
 
-const nums = [3, 3]
-const target = 6
+const nums = [3, 3];
+const target = 6;
 
-console.log(twoSum(nums, target))
+console.log(twoSum(nums, target));
