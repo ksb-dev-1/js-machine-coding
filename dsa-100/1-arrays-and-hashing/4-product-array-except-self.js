@@ -80,19 +80,21 @@ function productExceptSelf(nums) {
 // More optimized
 
 function productExceptSelf(nums) {
-  const ans = new Array(nums.length).fill(1);
+  let result = new Array(nums.length).fill(1);
 
-  for (let i = 1; i < nums.length; i++) {
-    ans[i] = ans[i - 1] * nums[i - 1];
+  let prefix = 1;
+  for (let i = 0; i < nums.length; i++) {
+    result[i] *= prefix;
+    prefix *= nums[i];
   }
 
-  let right = 1;
-
+  let postfix = 1;
   for (let i = nums.length - 1; i >= 0; i--) {
-    ans[i] = ans[i] * right;
-    right = right * nums[i];
+    result[i] *= postfix;
+    postfix *= nums[i];
   }
-  return ans;
+
+  return result;
 }
 
 const nums = [1, 2, 3, 4];
